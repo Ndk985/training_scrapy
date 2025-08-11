@@ -85,3 +85,26 @@ DOWNLOAD_DELAY = 1
 
 # Set settings whose default value is deprecated to a future-proof value
 FEED_EXPORT_ENCODING = "utf-8"
+
+FEEDS = {
+    # Имя файла для сохранения данных теперь указываем здесь,
+    # а не при вызове паука из консоли.
+    'quotes_text.csv': {
+        # Формат файла.
+        'format': 'csv',
+        # Поля, данные из которых будут выведены в файл, и их порядок.
+        # Выведем в этот файл только два поля из трёх.
+        'fields': ['text', 'tags'],
+        # Если файл с заданным именем уже существует, то
+        # при значении False данные будут дописываться в существующий файл;
+        # при значении True существующий файл будет перезаписан.
+        'overwrite': True
+    },
+    # И ещё один файл.
+    'quotes_author.csv': {
+        'format': 'csv',
+        # В этот файл попадёт только список авторов.
+        'fields': ['author'],
+        'overwrite': True
+    },
+}
