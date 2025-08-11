@@ -108,3 +108,7 @@ FEEDS = {
         'overwrite': True
     },
 }
+
+ITEM_PIPELINES = {
+    'training_scrapy.pipelines.QuotesToDBPipeline': 300,
+}
